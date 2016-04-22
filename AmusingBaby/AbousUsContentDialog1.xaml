@@ -1,0 +1,49 @@
+﻿<ContentDialog
+    x:Class="AmusingBaby.AbousUsContentDialog1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AmusingBaby"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title=""
+   
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Grid  Grid.Row="0">
+            <TextBlock Text="趣宝宝(深圳趣宝宝科技有限公司)
+                       智力于打造中国母婴行业的育儿，
+                       工具，社交等全方位生活服务平
+                       台，通国趣宝宝婴儿智能守护产
+                       品的配套使用，贴心守护婴儿宝
+                       宝健康成长，让育儿变得更简单
+                       有趣。围绕育儿，女性社交两大
+                       需求，趣宝宝客户端具备记录宝
+                       宝成长，育儿知识精准推送，看
+                       看社交，个性定制提醒，以及喂
+                       奶打疫苗，体检提醒等多重功能
+                       全方位满足新手父母的需要。
+                       官方网站:www.qbb.net"
+                       TextWrapping="Wrap"
+                       Width="230"
+                       Height="260"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        </Grid>
+
+
+        <Grid Grid.Row="1" >
+            <Button Content="确定" Margin="30,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Button_Click"></Button>
+            <Button Content="取消" Margin="0,20,30,0" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_Click"></Button>
+
+        </Grid>
+
+    </Grid>
+</ContentDialog>

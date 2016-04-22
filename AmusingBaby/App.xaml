@@ -1,0 +1,166 @@
+﻿<Application
+    x:Class="AmusingBaby.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AmusingBaby"
+    RequestedTheme="Light">
+
+    <Application.Resources >
+
+        <ResourceDictionary >
+            <!--<ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default" Source="Theme.xaml"/>
+            </ResourceDictionary.ThemeDictionaries>
+            <ControlTemplate x:Key="ListViewItemStyle" TargetType="ListViewItem">
+                <ListViewItemPresenter
+        			ContentTransitions="{TemplateBinding ContentTransitions}"
+        			SelectionCheckMarkVisualEnabled="True"
+        			CheckBrush="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			CheckBoxBrush="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}"
+        			DragForeground="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			FocusBorderBrush="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			FocusSecondaryBorderBrush="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}"
+        			PointerOverBackground="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			PointerOverForeground="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			SelectedBackground="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			SelectedForeground="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			SelectedPointerOverBackground="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			PressedBackground="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			SelectedPressedBackground="{ThemeResource ListViewItemTransparentThemeBrush}"
+        			DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}"
+        			DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}"
+        			ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}"
+        			HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+        			VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+        			ContentMargin="{TemplateBinding Padding}"
+        			CheckMode="Inline"/>
+            </ControlTemplate>-->
+
+           
+            <Style x:Key="MyRadioButtonStyle" TargetType="RadioButton">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+                <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+                <Setter Property="MinWidth" Value="50"/>
+                <Setter Property="UseSystemFocusVisuals" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="8"/>
+                                </Grid.RowDefinitions>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="PointerOver"/>
+                                        <VisualState x:Name="Pressed"/>
+                                        <VisualState x:Name="Disabled"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="checkRectangle"/>
+                                                <DoubleAnimation Duration="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="UncheckRectangle"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked"/>
+                                        <VisualState x:Name="Indeterminate"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Grid Height="8" VerticalAlignment="Top" Grid.Row="1">
+                                    <Rectangle x:Name="UncheckRectangle" Fill="White" Height="3"  Opacity="1" VerticalAlignment="Top"/>
+                                    <Rectangle x:Name="checkRectangle" Fill="Red" Height="3" Opacity="0" VerticalAlignment="Top"/>
+                                </Grid>
+                                <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" Grid.Row="0" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" TextWrapping="Wrap" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="MenuRadioButtonStyle" TargetType="RadioButton">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+                <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+                <Setter Property="UseSystemFocusVisuals" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid x:Name="rootGrid" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <Storyboard>
+                                                <PointerUpThemeAnimation Storyboard.TargetName="rootGrid"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="PointerOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="OverRectangle"/>
+                                                <DoubleAnimation Duration="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="UncheckRectangle"/>
+                                                <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="pointerRectangle"/>
+                                                <PointerUpThemeAnimation Storyboard.TargetName="rootGrid"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="pointerRectangle"/>
+                                                <DoubleAnimation Duration="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="OverRectangle"/>
+                                                <DoubleAnimation Duration="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="UncheckRectangle"/>
+                                                <PointerDownThemeAnimation Storyboard.TargetName="rootGrid"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="checkRectangle"/>
+                                                <DoubleAnimation Duration="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="UncheckRectangle"/>
+                                                <DoubleAnimation Duration="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="OverRectangle"/>
+                                                <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="pointerRectangle"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked"/>
+                                        <VisualState x:Name="Indeterminate"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Grid >
+                                    <Rectangle x:Name="UncheckRectangle" Fill="#BEC0BD" Opacity="1" />
+                                    <Rectangle x:Name="OverRectangle" Fill="#818181" Opacity="0" />
+                                    <Rectangle x:Name="checkRectangle" Fill="#4C4E4B" Opacity="0" />
+                                    <Rectangle x:Name="pointerRectangle" Fill="#4C4E4B" Opacity="0"/>
+                                </Grid>
+                                <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" Grid.Row="0" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" TextWrapping="Wrap" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+           
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+
+
+</Application>

@@ -1,0 +1,21 @@
+﻿<ContentDialog
+    x:Class="AmusingBaby.VersionUpDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AmusingBaby"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title=""
+    
+   
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Height="349.474" Margin="-6,-24,6,0">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel>
+            <TextBlock Text="当前已是最新版本！" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0"></TextBlock>
+            <Button Content="确定" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,100,0,0" Click="Button_Click" ></Button>
+        </StackPanel>
+    </Grid>
+</ContentDialog>
